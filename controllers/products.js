@@ -9,14 +9,14 @@ exports.getAddProduct = (req, res, next)=>{
 
 exports.postAddProduct = (req, res, next)=>{
     //products.push({title: req.body.title});
-    const product = new Product({title: req.body.title});
+    const product = new Product(req.body.title);
     product.save();
     res.redirect('/');
 }
 
 exports.getShop = (req, res, next)=>{
-    const products = Product.fetchAll();
-     res.render('shop', 
+    Product.fetchAll(products => {
+        res.render('shop', 
      {prods: products,
       docTitle: 'Shop', 
       path: '/', 
@@ -24,4 +24,6 @@ exports.getShop = (req, res, next)=>{
       activeShop: true,
       productCSS: true,
      });
+    });
+     
  }
