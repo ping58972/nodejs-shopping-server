@@ -25,7 +25,7 @@ app.use('/admin', adminRoute.router);
 
 app.use('/', (req, res, next)=>{
     //res.status(404).sendFile(path.join(rootDir, 'views', '404.html'));
-    res.render('404', {docTitle: '404 Page'});
+    res.render('404', {docTitle: '404 Page', path: ''});
 });
 
 app.listen(4000);
