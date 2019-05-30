@@ -1,7 +1,7 @@
 const Product = require('../modles/product');
 
 exports.getAddProduct = (req, res, next)=>{
-    res.render('admin/add-product', {docTitle: 'add-product', path: '/admin/add-product', 
+    res.render('admin/add-product', {pageTitle: 'add-product', path: '/admin/add-product', 
                                 formCSS:true, productCSS: true, activeAddProduct: true
                                 });
                             }
@@ -18,7 +18,7 @@ exports.getProducts = (req, res, next) => {
     Product.fetchAll(products => {
         res.render('admin/products', 
      {prods: products,
-      docTitle: 'Admin Product', 
+      pageTitle: 'Admin Product', 
       path: '/admin/products'
      });
     });
