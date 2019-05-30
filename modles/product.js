@@ -1,4 +1,3 @@
-//const products = [];
 
 const fs = require('fs');
 const path = require('path');
@@ -7,7 +6,6 @@ const p = path.join(
         'data', 
         'products.json');
 const getProductsFromFile = callBack => {
-    
         fs.readFile(p, (err, fileContent)=>{
             if(err){
                 callBack([]);
